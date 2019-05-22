@@ -19,19 +19,16 @@
     </ion-card-title>
   </ion-card-content>
 
+  <ion-list ion-item *ngFor="let page of api.Pages" (click)="openPage3(page.id)">
+      {{ page.title.rendered }} - Page/Luoghi
+  </ion-list>
 
-
-<ion-list ion-item *ngFor="let page of api.Pages" (click)="openPage3(page.id)"> 
-    {{ page.title.rendered }} - Page/Luoghi
-</ion-list>
-
-<br>
+  <br><br>
 
   <ion-list ion-item *ngFor="let post of api.Posts" (click)="openPage2(post.id)">
     {{ post.title.rendered }} - Eventi/Posts
   </ion-list>
 
-  
 </ion-content>
 
 

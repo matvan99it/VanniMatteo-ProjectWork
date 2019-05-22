@@ -40,7 +40,7 @@ export class WpApiProvider {
   getPages(){
     this.get('wp/v2/pages').subscribe((data)=>{
       
-      console.log(data);
+      console.log(data + "shuodvfaib");
       
       this.PagesP = data;
       let index = this.PagesP.length;
