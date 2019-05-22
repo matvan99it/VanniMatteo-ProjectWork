@@ -9,7 +9,7 @@ import { ElencoContenutiPage } from '../pages/elenco-contenuti/elenco-contenuti'
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ElencoContenutiPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
