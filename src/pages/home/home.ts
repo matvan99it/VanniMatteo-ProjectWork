@@ -18,6 +18,7 @@ export class HomePage {
       console.log(data);
     });
     this.Posts=this.api.getPosts();
+    
   }
 
   openDetail(item){

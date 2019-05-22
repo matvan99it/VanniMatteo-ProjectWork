@@ -1,25 +1,19 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    
 
     <ion-title><!--Qui va inserito il title del wp-->
       TITOLO DA CAMBIARE
     </ion-title>
 
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
+    
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding *ngFor="let item of Posts" (click)="openDetail(item)">
-  <ion-card-content>
+<ion-content padding>
+  <ion-card-content *ngFor="let item of Posts" (click)="openDetail(item)">
     <ion-card-title>
       {{ item.title.redered }}
     </ion-card-title>
@@ -27,6 +21,10 @@
 
   <ion-list ion-item *ngFor="let post of api.Posts" (click)="openPage2(post.id)">
     {{ post.title.rendered }} - Eventi/Posts
+  </ion-list>
+
+  <ion-list ion-item *ngFor="let page of api.Pages" (click)="openPage3(page.id)">
+      {{ page.title.rendered }} - Page/Luoghi
   </ion-list>
 </ion-content>
 

@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class WpApiProvider {
 
-  private API_URL: string="https://projectwork-vanni.000webhostapp.com/wp-json";
+  private API_URL: string="https://projectwork-vanni.000webhostapp.com/wp-json/";
   private Categories: any=[];
   private Posts: any =[];
   private Pages: any =[];
