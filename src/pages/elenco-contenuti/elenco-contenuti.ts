@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 /**
  * Generated class for the ElencoContenutiPage page.
  *
@@ -15,7 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ElencoContenutiPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
@@ -31,7 +30,7 @@ export class ElencoContenutiPage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(ItemDetailsPage, {
+    this.navCtrl.push(DettagliContenuti, {
       item: item
     });
   }
