@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ElencoContenutiPage } from '../pages/elenco-contenuti/elenco-contenuti';
 import { DettagliContenutiPage } from '../pages/dettagli-contenuti/dettagli-contenuti';
+import { WpApiProvider } from '../providers/wp-api/wp-api';
 
 
 
@@ -32,7 +33,8 @@ import { DettagliContenutiPage } from '../pages/dettagli-contenuti/dettagli-cont
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    WpApiProvider
   ]
 })
 export class AppModule {}
