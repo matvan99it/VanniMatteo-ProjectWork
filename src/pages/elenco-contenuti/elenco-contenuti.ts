@@ -29,11 +29,11 @@ export class ElencoContenutiPage {
     }
   }
 
-  itemTapped(event, item) {
+  /*itemTapped(event, item) {
     this.navCtrl.push(DettagliContenuti, {
       item: item
     });
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ElencoContenutiPage');
