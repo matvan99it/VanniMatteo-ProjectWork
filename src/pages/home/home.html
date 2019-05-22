@@ -6,7 +6,7 @@
     </button>
 
     <ion-title><!--Qui va inserito il title del wp-->
-      Rimini, una città d'amare
+      TITOLO DA CAMBIARE
     </ion-title>
 
     <ion-buttons end>
@@ -18,24 +18,16 @@
 
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-  <button ion-button>CLICCAMI</button>
-  <p id="banana"></p>
-<!--
-  <script>
-    
-    </script>
-    <script src="https://projectwork-vanni.000webhostapp.com/wp-json/wp/v2/posts">
-    function receiveData( data ) {
-      console.log( data );
-    }</script>
-  -->
+<ion-content padding *ngFor="let item of Posts" (click)="openDetail(item)">
+  <ion-card-content>
+    <ion-card-title>
+      {{ item.title.redered }}
+    </ion-card-title>
+  </ion-card-content>
 
-
+  <ion-list ion-item *ngFor="let post of api.Posts" (click)="openPage2(post.id)">
+    {{ post.title.rendered }} - Eventi/Posts
+  </ion-list>
 </ion-content>
 
 

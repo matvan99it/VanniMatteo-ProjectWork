@@ -6,28 +6,25 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ElencoContenutiPage } from '../pages/elenco-contenuti/elenco-contenuti';
 import { DettagliContenutiPage } from '../pages/dettagli-contenuti/dettagli-contenuti';
 import { WpApiProvider } from '../providers/wp-api/wp-api';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ElencoContenutiPage,
     DettagliContenutiPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ElencoContenutiPage,
     DettagliContenutiPage
   ],
   providers: [

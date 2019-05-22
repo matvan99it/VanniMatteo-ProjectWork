@@ -1,4 +1,5 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!--ion-nav [root]="rootPage"></ion-nav-->
+
 <ion-menu [content]="content">
 
     <ion-header>
@@ -9,9 +10,8 @@
   
     <ion-content>
       <ion-list>
-        <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
+        <button menuConsole ion-item *ngFor="let cat of api.Categories" (click)="openPage(cat.id)">{{ cat.name }} :Titolo (app.html)</button>
+        <button menuConsole ion-item *ngFor="let post of api.Posts" (click)="openPage2(post.id)">{{ post.title.rendered }} :Titolo (app.html)</button>
       </ion-list>
     </ion-content>
   
