@@ -13,6 +13,7 @@ export class WpApiProvider {
   private API_URL: string="https://projectwork-vanni.000webhostapp.com/wp-json/";
   private Categories: any=[];
   private Posts: any =[];
+  private PagesP: any =[];  
   private Pages: any =[];
   constructor(public http: HttpClient) {
     console.log('Hello WpApiProvider Provider');
@@ -38,8 +39,23 @@ export class WpApiProvider {
 
   getPages(){
     this.get('wp/v2/pages').subscribe((data)=>{
-      this.Pages = data;
-      console.log(this.Pages);
+      
+      console.log(data);
+      
+      this.PagesP = data;
+      let index = this.PagesP.length;
+      console.log(this.PagesP);
+      
+      for(let i=0; i<index; i++)
+      {
+        if(i==2 || i==3 || i==4)
+        {
+          console.log(i+"->"+index);
+          this.Pages.push(this.PagesP[i]);
+        }    
+      }
+      console.log("page normale");
+      console.log(this.Pages)
       return this.Pages;
     });
   }
