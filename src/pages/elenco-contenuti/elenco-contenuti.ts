@@ -12,7 +12,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'elenco-contenuti.html',
 })
 export class ElencoContenutiPage {
-  icons: string[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  /*icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

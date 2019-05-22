@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ElencoContenuti } from './../elenco-contenuti/elenco-contenuti'
+//import { ElencoContenuti } from './../elenco-contenuti/elenco-contenuti'
 
 @Component({
   selector: 'page-home',
