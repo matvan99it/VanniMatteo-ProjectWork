@@ -37,8 +37,8 @@ export class DettagliContenutiPage {
     
     /*content, excerpt e title sono comuni a pagine e articoli*/
     //title -> serve
-    //content -> descrizione    
-    //excerpt -> descrizione messa nella home -> da riutilizzare in home per rendere più bello    
+    //content -> descrizione
+    //excerpt -> descrizione messa nella home -> da riutilizzare in home per rendere più bello
     /*Le immagini dovrò trovare un modo di mostrarle*/
     //source_url -> immagine
   }
