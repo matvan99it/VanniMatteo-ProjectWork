@@ -16,7 +16,6 @@ export class WpApiProvider {
   private PagesP: any =[];  
   private Pages: any =[];
 
-  private SpecPost: any=[];
   private SpecPage: any=[];
 
   constructor(public http: HttpClient) {

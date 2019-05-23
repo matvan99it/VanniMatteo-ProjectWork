@@ -17,8 +17,7 @@ export class HomePage {
       console.log("banan" + data);
     });
     this.Posts=this.api.getPosts();
-    console.log(this.Posts);
-    
+    console.log(this.Posts);    
   }
 
   openDetail(item){
