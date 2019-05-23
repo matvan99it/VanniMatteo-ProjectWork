@@ -25,4 +25,12 @@ export class HomePage {
     this.navCtrl.push(DettagliContenutiPage, {post: item});
   }
 
+  public test(event ,item, tipologia){
+    this.navCtrl.push(DettagliContenutiPage,
+    {
+      item:item,
+      tipologia: tipologia
+    });
+    }
+
 }

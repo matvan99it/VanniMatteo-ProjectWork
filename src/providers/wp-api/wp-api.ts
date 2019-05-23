@@ -15,6 +15,10 @@ export class WpApiProvider {
   private Posts: any =[];
   private PagesP: any =[];  
   private Pages: any =[];
+
+  private SpecPost: any=[];
+  private SpecPage: any=[];
+
   constructor(public http: HttpClient) {
     console.log('Hello WpApiProvider Provider');
   }
@@ -26,6 +30,14 @@ export class WpApiProvider {
   getCategories(){
     this.get('wp/v2/categories').subscribe((data)=>{
       this.Categories = data;
+    });
+  }
+
+  getSpecific(type: string, id:number){
+    this.get('wp/v2/'+type+'/'+id).subscribe((data)=>{
+      this.SpecPage = data;
+      console.log(this.SpecPage);
+      return this.SpecPage;
     });
   }
 
