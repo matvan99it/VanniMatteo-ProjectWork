@@ -34,7 +34,7 @@ export class WpApiProvider {
   }
 
   getSpecific(type: string, id:number){
-    this.get('wp/v2/'+type+'/'+id).subscribe((data)=>{
+    this.get('wp/v2/'+type+'/'+id+'?_embed').subscribe((data)=>{
       this.SpecPage = data;
       console.log(this.SpecPage);
       return this.SpecPage;
