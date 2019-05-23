@@ -17,7 +17,7 @@ export class DettagliContenutiPage {
   wp_id: any;
   wp_type: any;
   public items:any=[];
-  public Posts:any=[];
+  public dettagliato:any=[];
   
   public wp_ricomposto: any=["", "", "", ""];
 
@@ -28,10 +28,7 @@ export class DettagliContenutiPage {
     this.api.get().subscribe((data)=>{
       console.log("banan" + data);
     });
-    console.log("prova getSpecific dentro dettagli");
-    console.log(this.api.getSpecific(this.wp_type, this.wp_id));
-    this.Posts=this.api.getSpecific(this.wp_type, this.wp_id);
-    console.log("dettagli: ");console.log(this.Posts);
+    this.dettagliato=this.api.getSpecific(this.wp_type, this.wp_id);
   }
 
   ionViewDidLoad() {

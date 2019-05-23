@@ -30,7 +30,7 @@
   <ion-list ion-item *ngFor="let post of api.Posts" (click)="test($event, post.id, 'posts')">
     {{ post.title.rendered }} - Eventi/Posts<br>
     <div [innerHTML] = "post.excerpt.rendered"></div>
-    <img [src]="post['wp:featuredmedia'].media_details.source'_url"/>
+    
   </ion-list>
 
 </ion-content>

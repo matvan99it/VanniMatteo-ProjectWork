@@ -17,9 +17,11 @@
     <div *ngIf="wp_type">
         {{wp_type}}
     </div>
-    <ion-list ion-item *ngFor="let page of api.Pages">
-        {{ page.title.rendered }} - Page/Luoghi
-        <br>
+    <ion-list ion-item *ngFor="let det of api.SpecPages">
+        <div *ngIf="wp_id">
+            {{ det.title.rendered }}
+        </div>
+      <br>
         <!--
           /*content, excerpt e title sono comuni a pagine e articoli*/
           //title -> serve anche per metterlo sopra la page
@@ -27,6 +29,6 @@
           //excerpt -> descrizione messa nella home -> da riutilizzare in home per rendere più bello
           /*Le immagini dovrò trovare un modo di mostrarle*/
           //source_url -> immagine -> [your-data]._embedded['wp:featuredmedia']['0'].source_url-->
-        {{ page.content.rendered }}
+          <div [innerHTML] = "det.excerpt.rendered"></div>
     </ion-list>
 </ion-content>
