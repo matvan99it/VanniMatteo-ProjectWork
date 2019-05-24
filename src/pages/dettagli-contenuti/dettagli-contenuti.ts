@@ -26,7 +26,7 @@ export class DettagliContenutiPage {
   constructor(public navCtrl: NavController, public api:WpApiProvider, public navParams: NavParams, private sanitizer: DomSanitizer) {
     this.wp_id=navParams.get('item');
     this.wp_type=navParams.get('tipologia');
-    this.wp_text=navParams.get('testo_valido');
+    this.wp_text=navParams.get('contenuto');
     this.wp_img=navParams.get('foto');
     this.wp_title=navParams.get('titolo');
     

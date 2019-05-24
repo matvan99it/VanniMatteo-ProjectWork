@@ -16,21 +16,20 @@ export class HomePage {
   constructor(public navCtrl: NavController, public api:WpApiProvider, public navparams: NavParams, private sanitizer: DomSanitizer) {
     this.api.get().subscribe((data)=>{
     });
-    this.Posts=this.api.getPosts(); 
+    this.Posts=this.api.getPosts();
   }
 
   openDetail(item){
     this.navCtrl.push(DettagliContenutiPage, {post: item});
   }
-  testo_valido: any;
+  
   public test(event ,item, tipologia, titolo, contenuto, foto){
-    this.testo_valido = this.sanitizer.bypassSecurityTrustUrl(contenuto);
     this.navCtrl.push(DettagliContenutiPage,
     {
       item:item,
       tipologia: tipologia,
       titolo: titolo,
-      testo_valido: contenuto,
+      contenuto: contenuto,
       foto: foto
     });
   }
