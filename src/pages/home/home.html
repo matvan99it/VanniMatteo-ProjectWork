@@ -19,18 +19,19 @@
     </ion-card-title>
   </ion-card-content>
 
-  <ion-list ion-item *ngFor="let page of api.Pages" (click)="test($event, page.id, 'pages')">
-      {{ page.title.rendered }} - Page/Luoghi<br>
-      
-     
+  Luoghi:
+  <ion-list ion-item *ngFor="let page of api.Pages" (click)="test($event, page.id, 'pages', page.content.rendered, page._embedded['wp:featuredmedia']['0'].source_url )">
+      <img id="img_home" [src]="page._embedded['wp:featuredmedia']['0'].source_url">
+      {{ page.title.rendered }}
   </ion-list>
 
   <br><br>
 
-  <ion-list ion-item *ngFor="let post of api.Posts" (click)="test($event, post.id, 'posts')">
-    {{ post.title.rendered }} - Eventi/Posts<br>
-    <div [innerHTML] = "post.excerpt.rendered"></div>
-    
+  Eventi:
+  <ion-list ion-item *ngFor="let post of api.Posts" (click)="test($event, post.id, 'posts', post.content.rendered, post._embedded['wp:featuredmedia']['0'].source_url )">
+    <img id="img_home" [src]="post._embedded['wp:featuredmedia']['0'].source_url">
+    {{ post.title.rendered }}<br>
+    <div id="testo" [innerHTML] = "post.excerpt.rendered"></div>
   </ion-list>
 
 </ion-content>

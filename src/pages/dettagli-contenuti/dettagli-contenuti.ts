@@ -16,6 +16,8 @@ import { WpApiProvider } from '../../providers/wp-api/wp-api';
 export class DettagliContenutiPage {
   wp_id: any;
   wp_type: any;
+  wp_text: any;
+  wp_img: any;
   public items:any=[];
   public dettagliato:any=[];
   
@@ -24,11 +26,15 @@ export class DettagliContenutiPage {
   constructor(public navCtrl: NavController, public api:WpApiProvider, public navParams: NavParams) {
     this.wp_id=navParams.get('item');
     this.wp_type=navParams.get('tipologia');
+    this.wp_text=navParams.get('contenuto');
+    this.wp_img=navParams.get('foto');
+    console.log("*************************");
+    console.log(this.wp_img+"   " +this.wp_text);
     
     this.api.get().subscribe((data)=>{
       console.log("banan" + data);
     });
-    this.dettagliato=this.api.getSpecific(this.wp_type, this.wp_id);
+    this.dettagliato=this.api.getSpecific(this.wp_type, this.wp_id, this.wp_text, this.wp_img);
   }
 
   ionViewDidLoad() {

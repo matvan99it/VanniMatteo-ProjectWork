@@ -32,8 +32,8 @@ export class WpApiProvider {
     });
   }
 
-  getSpecific(type: string, id:number){
-    this.get('wp/v2/'+type+'/'+id+'?_embed').subscribe((data)=>{
+  getSpecific(type: string, id:number, content:string, img: any){
+    this.get('wp/v2/'+type+'/'+id+'?content'+content).subscribe((data)=>{
       this.SpecPage = data;
       console.log(this.SpecPage);
       return this.SpecPage;
@@ -41,7 +41,7 @@ export class WpApiProvider {
   }
 
   getPosts(){
-    this.get('wp/v2/posts').subscribe((data)=>{
+    this.get('wp/v2/posts?_embed').subscribe((data)=>{
       this.Posts = data;
       console.log(this.Posts);
       return this.Posts;
@@ -49,7 +49,7 @@ export class WpApiProvider {
   }
 
   getPages(){
-    this.get('wp/v2/pages').subscribe((data)=>{
+    this.get('wp/v2/pages?_embed').subscribe((data)=>{
       
       console.log(data + "shuodvfaib");
       

@@ -1,3 +1,22 @@
 page-home {
+    img#img_home{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
 
+    ion-list{
+        width: "screen-width";
+        
+    }
+
+    div#testo p{
+        width: 50px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+
+    p{
+        word-wrap: break-word
+    }
 }

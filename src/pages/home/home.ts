@@ -24,12 +24,16 @@ export class HomePage {
     this.navCtrl.push(DettagliContenutiPage, {post: item});
   }
 
-  public test(event ,item, tipologia){
+  public test(event ,item, tipologia, contenuto, foto){
     this.navCtrl.push(DettagliContenutiPage,
     {
       item:item,
-      tipologia: tipologia
+      tipologia: tipologia,
+      contenuto: contenuto,
+      foto: foto
     });
+  console.log("***********")
+    console.log(foto+" **** "+contenuto);
     }
 
 }

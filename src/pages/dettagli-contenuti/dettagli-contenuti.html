@@ -11,11 +11,16 @@
 </ion-header>
 
 <ion-content padding>
+    <img src=" {{ wp_img }} ">
+    
     <div *ngIf="wp_id">
         {{wp_id}}
     </div>
     <div *ngIf="wp_type">
         {{wp_type}}
+    </div>
+    <div *ngIf="wp_text">
+        {{wp_text}}
     </div>
     <ion-list ion-item *ngFor="let det of api.SpecPages">
         <div *ngIf="wp_id">

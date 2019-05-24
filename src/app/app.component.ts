@@ -39,18 +39,5 @@ export class MyApp {
       this.api.getPosts();
     });
   }
-
-  openPage(cat_id: number=0)
-  {
-    this.nav.setRoot(HomePage, {cat_id: cat_id});
-  }
-  openPage2(cat_id: number=0)
-  {
-    this.nav.setRoot(HomePage, {cat_id: cat_id});
-  }
-  openPage3(cat_id: number=0)
-  {
-    this.nav.setRoot(HomePage, {cat_id: cat_id});
-  }
 }
 
