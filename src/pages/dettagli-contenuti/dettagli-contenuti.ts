@@ -19,26 +19,25 @@ export class DettagliContenutiPage {
   wp_type: any;
   wp_text: any;
   wp_img: any;
+  wp_title: any;
   public items:any=[];
   public dettagliato:any=[];
-  wp_text_allowed: any;
-  
-  public wp_ricomposto: any=["", "", "", ""];
 
   constructor(public navCtrl: NavController, public api:WpApiProvider, public navParams: NavParams, private sanitizer: DomSanitizer) {
     this.wp_id=navParams.get('item');
     this.wp_type=navParams.get('tipologia');
-    this.wp_text=navParams.get('contenuto');
+    this.wp_text=navParams.get('testo_valido');
     this.wp_img=navParams.get('foto');
+    this.wp_title=navParams.get('titolo');
     
-    this.wp_text_allowed = sanitizer.bypassSecurityTrustUrl(this.wp_text);
+    
     console.log("*************************");
     console.log(this.wp_img+" *** " +this.wp_text);
     
     this.api.get().subscribe((data)=>{
       console.log("banan" + data);
     });
-    this.dettagliato=this.api.getSpecific(this.wp_type, this.wp_id, this.wp_text, this.wp_img);
+    
   }
 
   ionViewDidLoad() {

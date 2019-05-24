@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { WpApiProvider } from '../../providers/wp-api/wp-api';
 import { DettagliContenutiPage } from '../dettagli-contenuti/dettagli-contenuti';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class HomePage {
   public items:any=[];
   public Posts:any=[];
 
-  constructor(public navCtrl: NavController, public api:WpApiProvider, public navparams: NavParams) {
+  constructor(public navCtrl: NavController, public api:WpApiProvider, public navparams: NavParams, private sanitizer: DomSanitizer) {
     this.api.get().subscribe((data)=>{
       console.log("banan" + data);
     });
@@ -23,13 +24,15 @@ export class HomePage {
   openDetail(item){
     this.navCtrl.push(DettagliContenutiPage, {post: item});
   }
-
-  public test(event ,item, tipologia, contenuto, foto){
+  testo_valido: any;
+  public test(event ,item, tipologia, titolo, contenuto, foto){
+    this.testo_valido = this.sanitizer.bypassSecurityTrustUrl(contenuto);
     this.navCtrl.push(DettagliContenutiPage,
     {
       item:item,
       tipologia: tipologia,
-      contenuto: contenuto,
+      titolo: titolo,
+      testo_valido: contenuto,
       foto: foto
     });
   console.log("***********")
