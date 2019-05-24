@@ -11,29 +11,14 @@
 </ion-header>
 
 <ion-content padding>
-    <img src=" {{ wp_img }} ">
-    
+    <img [src]="wp_img">
+
     <div *ngIf="wp_id">
         {{wp_id}}
     </div>
     <div *ngIf="wp_type">
         {{wp_type}}
     </div>
-    <div *ngIf="wp_text">
-        {{wp_text}}
-    </div>
-    <ion-list ion-item *ngFor="let det of api.SpecPages">
-        <div *ngIf="wp_id">
-            {{ det.title.rendered }}
-        </div>
-      <br>
-        <!--
-          /*content, excerpt e title sono comuni a pagine e articoli*/
-          //title -> serve anche per metterlo sopra la page
-          //content -> descrizione
-          //excerpt -> descrizione messa nella home -> da riutilizzare in home per rendere più bello
-          /*Le immagini dovrò trovare un modo di mostrarle*/
-          //source_url -> immagine -> [your-data]._embedded['wp:featuredmedia']['0'].source_url-->
-          <div [innerHTML] = "det.excerpt.rendered"></div>
-    </ion-list>
+    <div id="testo" innerHTML = "{{ wp_text }}"></div>
+    
 </ion-content>
