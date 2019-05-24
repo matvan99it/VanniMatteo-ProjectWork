@@ -14,12 +14,13 @@
 <ion-content padding>
     <img [src]="wp_img">
 
-    <div *ngIf="wp_id">
-        {{wp_id}}
-    </div>
-    <div *ngIf="wp_type">
-        {{wp_type}}
-    </div>
-    <div id="testo" innerHTML = "{{ wp_text }}"></div>
+    
+    <div id="testo" innerHTML = "{{ wp_text }}"></div><br>
     
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>      
+        [...]/<label *ngIf="wp_type">{{wp_type}}</label>/<label *ngIf="wp_id">{{wp_id}}</label>
+    </ion-toolbar>
+  </ion-footer>
