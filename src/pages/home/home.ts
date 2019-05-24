@@ -15,10 +15,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public api:WpApiProvider, public navparams: NavParams, private sanitizer: DomSanitizer) {
     this.api.get().subscribe((data)=>{
-      console.log("banan" + data);
     });
-    this.Posts=this.api.getPosts();
-    console.log(this.Posts);    
+    this.Posts=this.api.getPosts(); 
   }
 
   openDetail(item){
@@ -35,8 +33,6 @@ export class HomePage {
       testo_valido: contenuto,
       foto: foto
     });
-  console.log("***********")
-    console.log(foto+" **** "+contenuto);
-    }
+  }
 
 }

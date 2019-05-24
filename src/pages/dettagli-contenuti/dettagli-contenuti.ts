@@ -30,12 +30,7 @@ export class DettagliContenutiPage {
     this.wp_img=navParams.get('foto');
     this.wp_title=navParams.get('titolo');
     
-    
-    console.log("*************************");
-    console.log(this.wp_img+" *** " +this.wp_text);
-    
     this.api.get().subscribe((data)=>{
-      console.log("banan" + data);
     });
     
   }
