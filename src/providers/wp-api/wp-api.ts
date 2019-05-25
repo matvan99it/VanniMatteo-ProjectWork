@@ -35,7 +35,6 @@ export class WpApiProvider {
   getSpecific(type: string, id:number, content:string, img: any){
     this.get('wp/v2/'+type+'/'+id+'?content'+content).subscribe((data)=>{
       this.SpecPage = data;
-      console.log(this.SpecPage);
       return this.SpecPage;
     });
   }
@@ -43,7 +42,6 @@ export class WpApiProvider {
   getPosts(){
     this.get('wp/v2/posts?_embed').subscribe((data)=>{
       this.Posts = data;
-      console.log(this.Posts);
       return this.Posts;
     });
   }
@@ -51,22 +49,16 @@ export class WpApiProvider {
   getPages(){
     this.get('wp/v2/pages?_embed').subscribe((data)=>{
       
-      console.log(data + "shuodvfaib");
-      
       this.PagesP = data;
       let index = this.PagesP.length;
-      console.log(this.PagesP);
       
       for(let i=0; i<index; i++)
       {
         if(i==2 || i==3 || i==4)
         {
-          console.log(i+"->"+index);
           this.Pages.push(this.PagesP[i]);
         }    
       }
-      console.log("page normale");
-      console.log(this.Pages)
       return this.Pages;
     });
   }

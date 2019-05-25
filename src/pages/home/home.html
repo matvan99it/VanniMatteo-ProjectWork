@@ -4,7 +4,7 @@
     
 
     <ion-title><!--Qui va inserito il title del wp-->
-      TITOLO DA CAMBIARE
+      Rimini, una città d'amare
     </ion-title>
 
     
@@ -13,12 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card-content *ngFor="let item of Posts" (click)="openDetail(item)">
-    <ion-card-title>
-      {{ item.title.redered }}
-    </ion-card-title>
-  </ion-card-content>
-
+  
   Luoghi:
   <ion-list ion-item *ngFor="let page of api.Pages" (click)="test($event, page.id, 'pages', page.title.rendered ,page.content.rendered, page._embedded['wp:featuredmedia']['0'].source_url )">
       <img id="img_home" [src]="page._embedded['wp:featuredmedia']['0'].source_url">
