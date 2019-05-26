@@ -24,8 +24,11 @@
 
   Eventi:
   <ion-list ion-item *ngFor="let post of api.Posts" (click)="test($event, post.id, 'posts', post.title.rendered, post.content.rendered, post._embedded['wp:featuredmedia']['0'].source_url )">
-    <img id="img_home" [src]="post._embedded['wp:featuredmedia']['0'].source_url">
-    {{ post.title.rendered }}<br>
+    <ion-avatar>
+        <img id="img_home" [src]="post._embedded['wp:featuredmedia']['0'].source_url">{{ post.title.rendered }}
+    </ion-avatar>
+    
+    
     <div id="testo" [innerHTML] = "post.excerpt.rendered"></div>
   </ion-list>
 

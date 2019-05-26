@@ -6,18 +6,18 @@ page-home {
     }
 
     ion-list{
-        width: "screen-width";
-        
+        width: "screen-width";        
     }
 
     div#testo p{
+        word-wrap: break-word;
         width: 50px;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;
     }
 
     p{
-        word-wrap: break-word
+        word-wrap: "break-word";
     }
 
     

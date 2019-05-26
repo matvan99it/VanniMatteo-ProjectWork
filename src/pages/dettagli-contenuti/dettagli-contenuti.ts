@@ -12,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'page-dettagli-contenuti',
-  templateUrl: 'dettagli-contenuti.html',
+  templateUrl: 'dettagli-contenuti.html'
 })
 export class DettagliContenutiPage {
   wp_id: any;
